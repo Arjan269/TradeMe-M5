@@ -1,0 +1,74 @@
+[
+  {
+    "title": "iPhone 14",
+    "description": "Mint condition, 128GB, includes charger.",
+    "start_price": 500,
+    "reserve_price": 700
+  },
+  {
+    "title": "Gaming Laptop",
+    "description": "RTX 3060 graphics, 16GB RAM, 512GB SSD.",
+    "start_price": 900,
+    "reserve_price": 1200
+  },
+  {
+    "title": "Electric Scooter",
+    "description": "Good battery life, lightweight, foldable.",
+    "start_price": 300,
+    "reserve_price": 450
+  },
+  {
+    "title": "Samsung 55-inch 4K TV",
+    "description": "Ultra HD display, HDR10+, comes with remote.",
+    "start_price": 400,
+    "reserve_price": 550
+  },
+  {
+    "title": "PlayStation 5 Console",
+    "description": "Disk edition, includes controller and cables.",
+    "start_price": 600,
+    "reserve_price": 750
+  },
+  {
+    "title": "Mountain Bike",
+    "description": "21-speed Shimano gear system, lightweight frame.",
+    "start_price": 250,
+    "reserve_price": 350
+  },
+  {
+    "title": "Apple MacBook Air M1",
+    "description": "8GB RAM, 256GB SSD, excellent battery life.",
+    "start_price": 700,
+    "reserve_price": 900
+  },
+  {
+    "title": "Canon EOS 80D Camera",
+    "description": "Includes lens kit, strap, and carry bag.",
+    "start_price": 450,
+    "reserve_price": 650
+  },
+  {
+    "title": "Air Fryer XL",
+    "description": "5L capacity, barely used, great for families.",
+    "start_price": 60,
+    "reserve_price": 120
+  },
+  {
+    "title": "Dining Table Set",
+    "description": "Wooden table with 4 matching chairs.",
+    "start_price": 120,
+    "reserve_price": 250
+  },
+  {
+    "title": "LEGO Star Wars Millennium Falcon",
+    "description": "Complete set, includes minifigures.",
+    "start_price": 150,
+    "reserve_price": 300
+  },
+  {
+    "title": "Xbox Series X",
+    "description": "Includes controller, in excellent condition.",
+    "start_price": 500,
+    "reserve_price": 680
+  }
+]
