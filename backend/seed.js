@@ -1,36 +1,58 @@
-const mongoose = require('mongoose');
-const Item = require('./models/Item');
-const data = require('./seed-data.json');
+const mongoose = require("mongoose");
+const Auction = require("./models/Auction");
+const data = require("./seed-data.json");
 
-const MONGO_URI = "mongodb://localhost:27017/trademe";
+// Local MongoDB connection
+const MONGO_URI = "mongodb://127.0.0.1:27017/auctiondb";
 
-const run = async () => {
-  const command = process.argv[2]; // "seed" OR "delete"
-
-  if (!command || !["seed", "delete"].includes(command)) {
-    console.log("Usage: node seed.js <seed|delete>");
-    process.exit(1);
-  }
-
+async function connectDB() {
   try {
     await mongoose.connect(MONGO_URI);
     console.log("Connected to MongoDB");
-
-    if (command === "delete") {
-      await Item.deleteMany({});
-      console.log("All items deleted.");
-    }
-
-    if (command === "seed") {
-      await Item.insertMany(data);
-      console.log("Data seeded successfully.");
-    }
-
-    process.exit();
-  } catch (err) {
-    console.error(err);
+  } catch (error) {
+    console.error("MongoDB connection error:", error);
     process.exit(1);
   }
-};
+}
 
-run();
+async function seedData() {
+  await connectDB();
+
+  try {
+    await Auction.deleteMany();
+    await Auction.insertMany(data);
+    console.log("Database seeded successfully!");
+  } catch (error) {
+    console.error("Error seeding:", error);
+  } finally {
+    mongoose.connection.close();
+  }
+}
+
+async function clearData() {
+  await connectDB();
+
+  try {
+    await Auction.deleteMany();
+    console.log("Database cleared successfully!");
+  } catch (error) {
+    console.error("Error clearing:", error);
+  } finally {
+    mongoose.connection.close();
+  }
+}
+
+// CLI commands
+const command = process.argv[2];
+
+if (command === "seed") {
+  seedData();
+} else if (command === "clear") {
+  clearData();
+} else {
+  console.log(`
+Usage:
+  node seed.js seed   -> Insert seed data
+  node seed.js clear  -> Delete all auction data
+  `);
+}
